@@ -26,3 +26,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Todo-App {
+  padding-top: 2rem;
+  display: inline-block;
+  text-align: left;
+  /* background: linear-gradient(to bottom, #182073 0%,#000047 100%); */
+}
+
+input {
+  font-size: 1.5em;
+  border-radius: 0.5rem;
+}
+
+ul {
+  padding: 0rem;
+}
+
+li {
+  list-style: none;
+}
