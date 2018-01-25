@@ -13,7 +13,11 @@ import store from './store'
 //   ]
 // }
 
-const state = store.getState()
+const render = () => {
+  const state = store.getState()
+  ReactDOM.render(<App {...state} />, document.getElementById('root'));
+}
 
-ReactDOM.render(<App {...state} />, document.getElementById('root'));
+render()
+store.subscribe(render)
 registerServiceWorker();
