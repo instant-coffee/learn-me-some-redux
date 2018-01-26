@@ -13,11 +13,22 @@ import store from './store'
 //   ]
 // }
 
-const render = () => {
-  const state = store.getState()
-  ReactDOM.render(<App {...state} />, document.getElementById('root'));
+
+const todoChangeHandler = (val) => {
+  store.dispatch({ type: 'CURRENT_UPDATE', payload: val })
 }
 
+const render = () => {
+  const state = store.getState()
+
+  ReactDOM.render(<App 
+    todos={state.todos} 
+    currentTodo={state.currentTodo} 
+    changeCurrent={todoChangeHandler}
+    />, 
+    document.getElementById('root'));
+}
+ 
 render()
 store.subscribe(render)
 registerServiceWorker();
